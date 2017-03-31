@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lesson: one
+  word: one
+  word_answer: one
+  is_correct: false
+
+two:
+  lesson: two
+  word: two
+  word_answer: two
+  is_correct: false
