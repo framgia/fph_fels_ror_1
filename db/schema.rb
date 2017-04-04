@@ -21,15 +21,15 @@ ActiveRecord::Schema.define(version: 20170331064832) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "title",                     null: false
+    t.string   "title"
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
 
   create_table "lesson_words", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "lesson_id",      null: false
-    t.integer  "word_id",        null: false
+    t.integer  "lesson_id"
+    t.integer  "word_id"
     t.integer  "word_answer_id"
     t.boolean  "is_correct"
     t.datetime "created_at",     null: false
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20170331064832) do
 
   create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "result"
-    t.integer  "user_id",     null: false
-    t.integer  "category_id", null: false
+    t.integer  "user_id"
+    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_lessons_on_category_id", using: :btree
@@ -50,21 +50,21 @@ ActiveRecord::Schema.define(version: 20170331064832) do
   end
 
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "follower_id", null: false
-    t.integer  "followed_id", null: false
+    t.integer  "follower_id"
+    t.integer  "followed_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "name",       null: false
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "user_roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
-    t.integer  "role_id",    null: false
+    t.integer  "role_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["role_id"], name: "index_user_roles_on_role_id", using: :btree
@@ -72,25 +72,26 @@ ActiveRecord::Schema.define(version: 20170331064832) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "name",               null: false
-    t.string   "email",              null: false
-    t.string   "encrypted_password", null: false
+    t.string   "name"
+    t.string   "email"
     t.string   "avatar"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "password"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "word_answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "content",    null: false
-    t.integer  "word_id",    null: false
+    t.string   "content"
+    t.integer  "word_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["word_id"], name: "index_word_answers_on_word_id", using: :btree
   end
 
   create_table "words", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "content",     null: false
-    t.integer  "category_id", null: false
+    t.string   "content"
+    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_words_on_category_id", using: :btree
