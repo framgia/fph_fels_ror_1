@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   def index
     render "layouts/application"
   end
+  
+  def authenticate
+    redirect_to login_path unless logged_in?
+  end
 end

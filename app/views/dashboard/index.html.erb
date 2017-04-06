@@ -1,0 +1,53 @@
+<% content_for :page do %>dashboard<% end %>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="avatar">
+                    <img class="img-responsive" src="http://placehold.it/350x150">
+                </div>
+                <div class="text-center">
+                    <h4><%= logged_in_user.name =%></h4>
+                    <h5><%= logged_in_user.email =%></h5>
+                </div>
+                <ul class="list-group no-side-border">
+                    <li class="list-group-item"><a href="#">Users</a></li>
+                    <li class="list-group-item"><a href="#">Categories</a></li>
+                    <li class="list-group-item"><a href="#">Word list</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <h1 class="panel-heading title">Activities</h1>
+            <div class="panel-body">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-md-9">You followed <a href="#">John Doe</a></div>
+                        <div class="col-md-3 text-right">April 01, 2017</div>
+                    </div>
+                </div>
+                <div class="well">
+                    <div class="row">
+                        <div class="col-md-9"><a href="#">John Doe</a> learned 20 words in <a href="#">Home Words</a></div>
+                        <div class="col-md-3 text-right">April 01, 2017</div>
+                    </div>
+                </div>
+                <div class="well">
+                    <div class="row">
+                        <div class="col-md-9"><a href="#">John Doe</a> learned 10 words in <a href="#">Park Words</a></div>
+                        <div class="col-md-3 text-right">April 01, 2017</div>
+                    </div>
+                </div>
+                <div class="well">
+                    <div class="row">
+                        <div class="col-md-9">You learned 10 words in <a href="#">Park Words</a></div>
+                        <div class="col-md-3 text-right">April 01, 2017</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

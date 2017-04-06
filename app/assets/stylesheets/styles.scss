@@ -1,17 +1,64 @@
 //  variables
 
-$brand-orange: #FF9200;
-$brand-blue: #1111EE;
+$brand-orange : #FF9200;
+$brand-blue   : #1111EE;
+$gray         : #dddddd;
 
 // Initial
 
 .main-content {
-	padding: 30px 0;
-	margin-top: 50px; 
+  padding: 30px 0;
+  margin-top: 50px; 
 }
 
 .title {
   font-size: 20px;
-  margin-bottom: 30px;
   text-align: center;
+}
+
+ul {
+  li {
+    > a {
+      display: block;
+    }
+  }
+}
+
+
+// Components
+
+.panel {
+  .panel-heading {
+    margin: 0;
+  }
+
+  .title {
+    text-align: left;
+  }
+}
+
+.list-group {
+  &.no-side-border {
+    > * {
+      border-right: 0;
+      border-left: 0;
+    }
+  }
+}
+
+
+//  Dashboard
+
+.avatar {
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 }
